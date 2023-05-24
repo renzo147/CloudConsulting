@@ -1,0 +1,33 @@
+<template>
+    <lightning-card  title="" if:true={thereAreTaskToDo} >    
+        <div class="card-style">
+            <div>
+                <h1 class="pending-task-style">{counTask} Pending Tasks</h1>
+                <lightning-datatable
+                        key-field="Id"
+                        data={taskData}
+                        columns={columns}
+                        hide-checkbox-column="true"
+                        onrowaction={handleRowAction}>
+                </lightning-datatable>
+                <c-modal-Popup task={currentTask} ontaskupdated={handleRecord}> </c-modal-Popup>
+            </div>       
+        </div>
+    </lightning-card>
+    <lightning-card if:true={thereAreTask}>
+        <div class="notask-style">
+            You still do not have assigned tasks for this project
+        </div>
+        <div class="center-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/5058/5058432.png" width="50" height="50" alt="No task free icon" title="No task free icon">
+        </div>
+    </lightning-card>
+    <lightning-card class="pruebaaa" if:true={completedTask}>
+        <div class="notask-style">
+            You have completed all the tasks of this project
+        </div>
+        <div class="center-icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/856/856005.png " width="45" height="45" alt="" title="" class="img-small">
+        </div>
+    </lightning-card>
+</template>

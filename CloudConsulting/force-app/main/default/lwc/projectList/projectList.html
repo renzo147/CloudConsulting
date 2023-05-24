@@ -1,0 +1,10 @@
+<template>
+    <lightning-card  title="Your projects">
+        <div class="card-style">
+            <div class="header" for:each={projectData} for:item="project" key={project.Project__c}>
+                <h1 class="project-name-style">{project.Project__r.Name}</h1>
+                <c-resource-allocation  project-resource-id={project.Id}></c-resource-allocation>
+            </div>
+        </div>
+    </lightning-card>
+</template>

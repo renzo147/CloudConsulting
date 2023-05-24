@@ -1,0 +1,17 @@
+.card-style{
+    padding: 20px;
+}
+
+.header{
+    border: 1px solid #c5c5c5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.project-name-style{
+    font-weight: 500;
+    font-size: large;
+    padding-left: 10px;
+
+}

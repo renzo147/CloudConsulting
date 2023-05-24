@@ -1,0 +1,46 @@
+<template>
+  <!-- <template if:true={isSquadLead}>    
+      <strong>Soy SquadLead </strong>
+  </template>
+  <template if:false={isSquadLead}>
+    <strong>No Soy SquadLead </strong>
+  </template>
+  <template if:false={isInProgress}>
+    <strong>No Progreso </strong>
+  </template>
+  <template if:true={isInProgress}>
+    <strong>En Progreso </strong>
+  </template> -->
+  
+  
+
+    <template if:true={rolesWithoutAssignment}>
+      <lightning-card title="Assing Tasks">
+      
+        <template if:true={isVisible}>
+          <p class="slds-p-horizontal_small"></p>
+            <template for:each={rolesWithoutAssignment.data} for:item="role">
+              
+              <div key={role}>
+                  <c-assing-task role={role} record-id={recordId}></c-assing-task>
+                </div>
+              </template>
+            
+            <p slot="footer"></p>
+        </template>
+        <template if:false={isVisible}>
+          <strong>
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <h2 class="slds-text-heading_small slds-text-align_center">
+              <strong>Status: </strong> {statusField} - 
+              <strong>Squadlead: </strong> {squadLead} <br/>
+              <strong>ONLY THE SQUADLEAD CAN ASSING TASKS WHEN THE PROJECT STATUS IS IN PROGRESS</strong>
+              <!-- <strong>SquadleadId: </strong> {squadLeadId}
+              <strong>Id: </strong> {userId} -->
+            </h2>
+          </div></strong>
+        </template>
+
+    </lightning-card>
+    </template>
+  </template>

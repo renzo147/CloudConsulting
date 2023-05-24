@@ -1,0 +1,15 @@
+.toastMessage{
+
+    white-space: break-spaces !important;
+    }
+
+    .header{
+        border: 1px solid #c5c5c5;
+        padding: 10px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .card-style{
+        padding: 20px;
+    }

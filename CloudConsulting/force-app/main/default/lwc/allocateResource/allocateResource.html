@@ -1,0 +1,37 @@
+<template>
+    <div>
+      <template if:true={pending}>
+      <template if:true={role}>
+        <div class="card-style">
+          <!--Cabecera donde va el rol y las horas a cubrir-->
+          <div class="header">
+        <!-- <div class="slds-m-top_medium"> -->
+          <h2 class="slds-text-heading_small slds-text-align_center">
+            <strong>Role:</strong> {role.Role__c} -
+            <span>
+              <strong> Pending Hours To Assign: </strong> {hoursPendingToAssign} Hours.
+            </span>            
+          </h2>
+        <!-- </div> -->
+      </div>
+    </div>
+      </template>
+  
+      <template if:true={resList.data}>
+        <lightning-button variant="brand" label="Clean Table" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        <lightning-datatable
+          key-field="Id"
+          data={resList.data}
+          columns={columns}
+          onsave={handleSave}
+          draft-values={saveDraftValues}
+          hide-checkbox-column
+        >
+      
+        </lightning-datatable>
+      </template>
+      </template>
+      <br />
+    </div>
+   
+  </template>

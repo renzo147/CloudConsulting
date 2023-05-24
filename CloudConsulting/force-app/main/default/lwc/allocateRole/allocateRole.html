@@ -1,0 +1,53 @@
+<template>
+  
+    <template if:true={rolesWithoutAssignment}>
+      <lightning-card title="Allocate Resources">
+        <template if:true={isVisible}>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_small slds-text-align_center">
+            <strong>Start Date: </strong> <lightning-formatted-date-time
+            value={startDate}
+                  year="numeric"
+                  month="numeric"
+                  day="numeric"
+                  time-zone="UTC"
+                  ></lightning-formatted-date-time> -
+            <span>
+              <strong> End Date: </strong> <lightning-formatted-date-time
+              value={endDate}
+                    year="numeric"
+                    month="numeric"
+                    day="numeric"
+                    time-zone="UTC"
+                    ></lightning-formatted-date-time>.
+            </span>            
+          </h2>
+        </div>
+        
+  
+      <p class="slds-p-horizontal_small"></p>
+      <template for:each={rolesWithoutAssignment.data} for:item="role">
+        <div key={role}>
+            <c-allocate-resource role={role} record-id={recordId}></c-allocate-resource>
+          </div>
+      </template>
+      <p slot="footer"></p>
+    </template>
+
+      <template if:false={isVisible}>
+        <strong>
+          <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_small slds-text-align_center">
+            <strong>Status: </strong> {statusField} - 
+            <strong>Project Manager: </strong> {projectManager} <br/>
+            <strong>ONLY THE PROJECT MANAGER CAN ASSING RESOURCES WHEN THE PROJECT STATUS IS PRE KICKOFF</strong>
+            <!-- <strong>SquadleadId: </strong> {squadLeadId}
+            <strong>Id: </strong> {userId} -->
+          </h2>
+        </div></strong>
+      </template>
+
+    </lightning-card>    
+
+    </template>
+  </template>

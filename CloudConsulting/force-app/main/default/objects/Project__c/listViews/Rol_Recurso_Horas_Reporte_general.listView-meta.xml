@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rol_Recurso_Horas_Reporte_general</fullName>
+    <columns>NAME</columns>
+    <filterScope>Mine</filterScope>
+    <label>Rol/Recurso Horas Reporte general</label>
+</ListView>

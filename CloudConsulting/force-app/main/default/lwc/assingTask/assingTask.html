@@ -1,0 +1,37 @@
+<template>
+
+    
+      <template if:true={pending}>
+        <template if:true={resList}>
+      <template if:true={role}>
+        
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_small slds-text-align_center">
+            <strong>Role:</strong> {role.Role__c}         
+          </h2>
+        </div>
+      </template>
+  
+      <!-- <template if:true={resList}> -->
+        <div style="margin-right:10%; margin-left:10%">
+        
+        <lightning-datatable
+          key-field="prId"
+          data={resList.data}
+          columns={columns}
+          onsave={handleSave}
+          draft-values={saveDraftValues}
+          column-widths-mode="fixed"
+          hide-checkbox-column          
+        >
+      
+        </lightning-datatable>
+      
+      </div>
+      
+    </template>
+    </template>
+      
+    
+   
+  </template>

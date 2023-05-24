@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verify_PM</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(ISPICKVAL(Status__c, &quot;In Progress&quot;), IF(ISBLANK(ProjectManager__c ), TRUE, FALSE), FALSE)</errorConditionFormula>
+    <errorDisplayField>ProjectManager__c</errorDisplayField>
+    <errorMessage>You must assign a project manager to the project</errorMessage>
+</ValidationRule>
